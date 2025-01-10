@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Data;
 using capaDatos;
 using capaEntidad;
-using System.Data;
-using System.Dynamic;
 
 namespace capaNegocio
 {
@@ -16,7 +11,7 @@ namespace capaNegocio
 
         public DataTable EmployeesTable()
         {
-            List<EmployeeModel>Employess =objDato.GetEmployees();
+            List<EmployeeModel> Employess = objDato.GetEmployees();
             DataTable dataTable = new DataTable();
 
             dataTable.Columns.Add("Id");
@@ -47,8 +42,8 @@ namespace capaNegocio
             employee_new.name = name;
             employee_new.age = age;
             employee_new.sex = sex;
-            employee_new.salary =salary;
-            
+            employee_new.salary = salary;
+
             objDato.CreateEmployee(employee_new);
         }
 
@@ -60,7 +55,7 @@ namespace capaNegocio
             employee_new.name = name;
             employee_new.age = age;
             employee_new.sex = sex;
-            employee_new.salary =salary;
+            employee_new.salary = salary;
 
 
             objDato.UpdateEmployee(employee_new);

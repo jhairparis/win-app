@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using capaEntidad;
 using capaNegocio;
@@ -44,7 +37,7 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             var name = Convert.ToString(this.tb_name.Text);
-            var age = Convert.ToInt32(this.tb_age.Text); 
+            var age = Convert.ToInt32(this.tb_age.Text);
             var sex = Convert.ToChar(this.tb_sex.Text);
             var salary = Convert.ToDouble(this.tb_salary.Text);
 

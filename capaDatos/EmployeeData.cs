@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
-using System.Windows.Input;
+using System.Data.SqlClient;
 using capaEntidad;
 
 namespace capaDatos
@@ -38,8 +34,10 @@ namespace capaDatos
 
                     using (SqlCommand command = new SqlCommand(sql, cn))
                     {
-                        using (SqlDataReader reader = command.ExecuteReader()) {
-                            while (reader.Read()){
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
                                 EmployeeModel employee = new EmployeeModel();
                                 employee.id = Convert.ToInt32(reader[0]);
                                 employee.name = reader[1].ToString();
@@ -70,10 +68,10 @@ namespace capaDatos
                     cn.Open();
                     string sql = "SELECT * FROM empleados WHERE codEmp=@id";
 
-                    using(SqlCommand command = new SqlCommand(sql, cn))
+                    using (SqlCommand command = new SqlCommand(sql, cn))
                     {
                         command.Parameters.AddWithValue("@id", id);
-                        using(SqlDataReader reader = command.ExecuteReader())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
@@ -97,17 +95,18 @@ namespace capaDatos
             }
             return null;
         }
-    
+
         public void CreateEmployee(EmployeeModel employee)
         {
             try
             {
-               using(SqlConnection connection = new SqlConnection(safeConnectionString))
+                using (SqlConnection connection = new SqlConnection(safeConnectionString))
                 {
                     connection.Open();
 
                     string sql = "INSERT INTO empleados(nameEmp, edadEmp, sexoEmp, sueldoEmp) VALUES (@name, @edad, @sexo, @sueldo);";
-                    using (SqlCommand command = new SqlCommand(sql,connection)) {
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
                         command.Parameters.AddWithValue("@name", employee.name);
                         command.Parameters.AddWithValue("@edad", employee.age);
                         command.Parameters.AddWithValue("@sexo", employee.sex);
@@ -119,7 +118,7 @@ namespace capaDatos
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error creating employ: "+ ex.Message);
+                Console.WriteLine("Error creating employ: " + ex.Message);
             }
         }
         public void UpdateEmployee(EmployeeModel employee)

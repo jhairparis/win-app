@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using capaEntidad;
 using capaNegocio;
+using Test1;
 
 namespace WindowsFormsApp1
 {
@@ -34,7 +28,7 @@ namespace WindowsFormsApp1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,6 +83,14 @@ namespace WindowsFormsApp1
         {
             // exit button clicked
             this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            Form1 form1 = new Form1();
+            form1.Show();
+
         }
     }
 }
