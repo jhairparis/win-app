@@ -60,6 +60,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>beetle.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -155,7 +158,9 @@
     <None Include="resource\min.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="beetle.ico" />
     <Content Include="resource\assistant.png" />
+    <Content Include="resource\beetle.ico" />
     <Content Include="resource\calendar.png" />
     <Content Include="resource\chain.png" />
     <Content Include="resource\gear.png" />
